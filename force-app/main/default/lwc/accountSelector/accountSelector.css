@@ -1,0 +1,12 @@
+.container {
+    padding: 20px;
+}
+
+.selected-message {
+    margin-top: 20px;
+    padding: 12px 16px;
+    background: #074b8f;
+    border-left: 4px solid #07365c;
+    border-radius: 6px;
+    font-size: 15px;
+}

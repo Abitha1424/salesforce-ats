@@ -1,0 +1,147 @@
+<template>
+    <lightning-card title="Student Profile" icon-name="standard:contact">
+
+        <!-- Main Profile Container -->
+        <div class="profile-card">
+
+            <!-- Profile Header -->
+            <div class="profile-header">
+
+                <!-- Profile Image -->
+                <img
+                    src={profileImage}
+                    alt="Student Profile"
+                    class="profile-image"
+                />
+
+                <div class="profile-info">
+                    <h1>{name}</h1>
+
+                    <p class="course">
+                        {course}
+                    </p>
+
+                    <p>
+                        <b>Year:</b> {year}
+                    </p>
+
+                    <lightning-badge
+                        label="AI & Data Science">
+                    </lightning-badge>
+                </div>
+
+            </div>
+
+            <!-- About Section -->
+            <div class="section">
+                <h2>About Me</h2>
+
+                <p>
+                    I am interested in Artificial Intelligence,
+                    Machine Learning and Salesforce Development.
+                </p>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="section">
+                <h2>Skills</h2>
+
+                <div class="skills-container">
+                    <template
+                        for:each={skills}
+                        for:item="skill">
+
+                        <span
+                            key={skill}
+                            class="skill">
+                            {skill}
+                        </span>
+
+                    </template>
+                </div>
+            </div>
+
+            <!-- Additional Information -->
+            <template lwc:if={showMore}>
+
+                <div class="section additional-info">
+
+                    <h2>Additional Information</h2>
+
+                    <p>
+                        <b>Interest:</b> AI & Salesforce
+                    </p>
+
+                    <p>
+                        <b>Career Goal:</b> Salesforce Developer
+                    </p>
+
+                </div>
+
+            </template>
+
+            <template lwc:else>
+
+                <p class="hint">
+                    Click the button to view more information.
+                </p>
+
+            </template>
+
+            <!-- Links -->
+            <div class="section">
+
+                <h2>Connect With Me</h2>
+
+                <a
+                    href="https://www.linkedin.com/in/abitha-pushpalatha-b31117334/"
+                    target="_blank">
+                    LinkedIn
+                </a>
+
+                <br />
+
+                <a href="mailto:abithalatha1412@gmail.com">
+                    Email Me
+                </a>
+
+            </div>
+
+            <!-- Input Section -->
+            <div class="section">
+
+                <h2>Contact Me</h2>
+
+                <lightning-input
+                    lwc:ref="nameInput"
+                    label="Your Name"
+                    type="text">
+                </lightning-input>
+
+                <lightning-textarea
+                    label="Message"
+                    placeholder="Enter your message">
+                </lightning-textarea>
+
+                <lightning-combobox
+                    label="Reason"
+                    options={options}>
+                </lightning-combobox>
+
+            </div>
+
+            <!-- Buttons -->
+            <div class="button-container">
+
+                <lightning-button
+                    variant="brand"
+                    label={buttonLabel}
+                    onclick={handleToggle}>
+                </lightning-button>
+
+            </div>
+
+        </div>
+
+    </lightning-card>
+</template>

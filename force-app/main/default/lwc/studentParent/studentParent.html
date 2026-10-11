@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Student Parent">
+
+        <c-student-child
+            onmessage={handleMessage}>
+        </c-student-child>
+
+        <h2>{receivedMessage}</h2>
+
+    </lightning-card>
+</template>

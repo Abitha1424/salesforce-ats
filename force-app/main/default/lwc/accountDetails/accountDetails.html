@@ -1,0 +1,33 @@
+<template>
+
+    <div class="test-box">
+
+        <h2>Account Details</h2>
+
+        <p>
+            Account Name: {account.Name}
+        </p>
+
+        <p>
+            Industry: {account.Industry}
+        </p>
+
+        <p>
+            Phone: {account.Phone}
+        </p>
+
+        <h3>Contacts</h3>
+
+        <template
+            for:each={account.Contacts}
+            for:item="contact">
+
+            <p key={contact.Id}>
+                Contact Name: {contact.Name}
+            </p>
+
+        </template>
+
+    </div>
+
+</template>
